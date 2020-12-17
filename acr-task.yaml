@@ -2,10 +2,9 @@ version: v1.1.0
 steps:
   - build: >
       -f ./Dockerfile
-      --build-arg FROM_REGISTRY_URL={{.Values.FROM_REGISTRY_URL}}
-      -t {{.Run.Registry}}/node:15-alpine-{{.Run.ID}}
-      -t {{.Run.Registry}}/node:15-alpine
+      -t {{.Run.Registry}}/docker-sim/node:15-alpine-{{.Run.ID}}
+      -t {{.Run.Registry}}/docker-sim/node:15-alpine
       .
   - push:
-    - "{{.Run.Registry}}/node:15-alpine-{{.Run.ID}}"
-    - "{{.Run.Registry}}/node:15-alpine"
+    - "{{.Run.Registry}}/docker-sim/node:15-alpine-{{.Run.ID}}"
+    - "{{.Run.Registry}}/docker-sim/node:15-alpine"
